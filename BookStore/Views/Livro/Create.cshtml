@@ -1,0 +1,30 @@
+﻿@model BookStore.ViewModels.EditorBookViewModel
+
+<!--funcoes customizadas-->
+
+@{
+    ViewBag.Title = "Criar um novo livro";
+    Layout = "~/Views/Shared/_LayoutNovo.cshtml";
+}
+
+<h2>Novo Livro</h2>
+
+@using (Html.BeginForm())
+{
+    <form>
+        @Html.Partial("Partials/EditorBookPartial", Model)
+
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+}
+
+@section menu{
+    Olá você está na pagina de criação
+    <p>
+        <a href="@Url.Action("Index")">Voltar</a>
+    </p>
+}
+
+@section Scripts{
+    @Scripts.Render("~/bundles/jqueryval")
+}
